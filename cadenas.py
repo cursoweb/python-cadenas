@@ -24,8 +24,8 @@
 # Así donuts(5) devuelve 'Numero de donas: 5'
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # B. both_ends
@@ -34,8 +34,8 @@ def donuts(contador):
 # así 'spring' devuelve 'spng'. Sin embargo, si la longitud de la cadena
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # C. fix_start
@@ -47,8 +47,8 @@ def both_ends(s):
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # D. MixUp
@@ -56,57 +56,57 @@ def fix_start(s):
 # pon un espacio '<a> <b>', excepto que hay que intercambiar los 
 # 2 primeros caracteres de cada cadena.
 # ej.
-#   'mix', pod' -> 'pox mid'
-#   'dog', 'dinner' -> 'dig donner'
+#     'mix', pod' -> 'pox mid'
+#     'dog', 'dinner' -> 'dig donner'
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # Función simple test() utilizada en main() para mostrar
 # lo que retorna cada función vs lo que debería retornar.
 def test(got, expected):
-  if got == expected:
-    prefix = ' OK '
-  else:
-    prefix = '  X '
-  print '%s obtuvo: %s se esperaba: %s' % (prefix, repr(got), repr(expected))
+    if got == expected:
+        prefix = ' OK '
+    else:
+        prefix = '    X '
+    print '%s obtuvo: %s se esperaba: %s' % (prefix, repr(got), repr(expected))
 
 
 # Función main() llama a las funciones de arribacon entradas interesantes,
 # utilizando test() para verificar si cada resultado es correcto o no.
 def main():
-  print 'donuts'
-  # Each line calls donuts, compares its result to the expected for that call.
-  test(donuts(4), 'Numero de donas: 4')
-  test(donuts(9), 'Numero de donas: 9')
-  test(donuts(10), 'Numero de donas: many')
-  test(donuts(99), 'Numero de donas: many')
+    print 'donuts'
+    # Each line calls donuts, compares its result to the expected for that call.
+    test(donuts(4), 'Numero de donas: 4')
+    test(donuts(9), 'Numero de donas: 9')
+    test(donuts(10), 'Numero de donas: many')
+    test(donuts(99), 'Numero de donas: many')
 
-  print
-  print 'both_ends'
-  test(both_ends('spring'), 'spng')
-  test(both_ends('Hello'), 'Helo')
-  test(both_ends('a'), '')
-  test(both_ends('xyz'), 'xyyz')
+    print
+    print 'both_ends'
+    test(both_ends('spring'), 'spng')
+    test(both_ends('Hello'), 'Helo')
+    test(both_ends('a'), '')
+    test(both_ends('xyz'), 'xyyz')
 
-  
-  print
-  print 'fix_start'
-  test(fix_start('babble'), 'ba**le')
-  test(fix_start('aardvark'), 'a*rdv*rk')
-  test(fix_start('google'), 'goo*le')
-  test(fix_start('donut'), 'donut')
+    
+    print
+    print 'fix_start'
+    test(fix_start('babble'), 'ba**le')
+    test(fix_start('aardvark'), 'a*rdv*rk')
+    test(fix_start('google'), 'goo*le')
+    test(fix_start('donut'), 'donut')
 
-  print
-  print 'mix_up'
-  test(mix_up('mix', 'pod'), 'pox mid')
-  test(mix_up('dog', 'dinner'), 'dig donner')
-  test(mix_up('gnash', 'sport'), 'spash gnort')
-  test(mix_up('pezzy', 'firm'), 'fizzy perm')
+    print
+    print 'mix_up'
+    test(mix_up('mix', 'pod'), 'pox mid')
+    test(mix_up('dog', 'dinner'), 'dig donner')
+    test(mix_up('gnash', 'sport'), 'spash gnort')
+    test(mix_up('pezzy', 'firm'), 'fizzy perm')
 
 
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
-  main()
+    main()
