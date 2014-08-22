@@ -40,10 +40,11 @@ def donuts(contador):
 def both_ends(s):
     # +++tu código aquí+++
     if len(s) < 2:
-        print " "
+        a = ""
+        return a
     else:
-        print s[0:2]+s[-2:]
-    return
+        b = str(s[0:2])+str(s[-2:])
+        return b
 
 
 # C. fix_start
@@ -59,8 +60,8 @@ def fix_start(s):
     ss = s[0:1]
     empiezaCon = s.startswith(ss)
     if empiezaCon is True:
-        print ss+s[1:].replace(ss,'*')
-    return
+        a= str(ss)+str(s[1:].replace(ss,'*'))
+    return a
 
 
 # D. MixUp
@@ -73,10 +74,13 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
+    c = " "
     aa = a[0:2]
     bb = b[0:2]
-    print a.replace(aa,bb), b.replace(bb,aa)
-    return
+    uno = str(a.replace(aa,bb))
+    dos = str(b.replace(bb,aa))
+   
+    return uno +" "+dos
 
 
 # Función simple test() utilizada en main() para mostrar
