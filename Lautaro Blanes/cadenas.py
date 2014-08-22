@@ -24,13 +24,12 @@
 # Así donuts(5) devuelve 'Numero de donas: 5'
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
-    # +++tu código aquí+++
-    if contador < 10:
-        resultado = "Numero de donas: " + str(contador)
-    elif contador >= 10:
-        resultado = "Numero de donas: muchas"
-    return resultado
-
+    if contador < 10: 
+        cadena = ("Numero de donas: " + str(contador)) 
+    else: 
+        cadena = "Numero de donas: many" 
+    return cadena 
+    
 
 # B. both_ends
 # Dada una cadena s, devuelva una cadena hecha de los primeros 2
@@ -38,14 +37,12 @@ def donuts(contador):
 # así 'spring' devuelve 'spng'. Sin embargo, si la longitud de la cadena
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
-    # +++tu código aquí+++
-    if len(s) < 2:
-        a = ""
-        return a
-    else:
-        b = str(s[0:2])+str(s[-2:])
-        return b
-
+    longitud = len(s) 
+    if longitud >= 2: 
+        cadena = s[0:2] + s[longitud-2:longitud] 
+    else: cadena = "" 
+    return cadena 
+    
 
 # C. fix_start
 # Dada una cadena s, devuelva una cadena
@@ -56,13 +53,15 @@ def both_ends(s):
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
-    # +++tu código aquí+++
-    ss = s[0:1]
-    empiezaCon = s.startswith(ss)
-    if empiezaCon is True:
-        a= str(ss)+str(s[1:].replace(ss,'*'))
-    return a
-
+    longitud = len(s) 
+    primerCaracter = s[0] 
+    if longitud >= 1: 
+        cadena = s.replace(primerCaracter, "*") 
+        cadena = primerCaracter + cadena[1:] 
+    else: 
+        cadena = "La cadena debe tener 1 mas caracteres" 
+    return cadena 
+    
 
 # D. MixUp
 # Dadas las cadenas a y b, retornar una cadena simple con a y b separados
@@ -73,15 +72,14 @@ def fix_start(s):
 #     'dog', 'dinner' -> 'dig donner'
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
-    # +++tu código aquí+++
-    c = " "
-    aa = a[0:2]
-    bb = b[0:2]
-    uno = str(a.replace(aa,bb))
-    dos = str(b.replace(bb,aa))
-   
-    return uno +" "+dos
-
+    longitudA = len(a)
+    longitudB = len(b)
+    if (longitudA >= 2 and longitudB >= 2):
+        cadena = b[0:2] + a[2:] + " " + a[0:2] + b[2:]
+    else:
+        cadena = "Cada palabra debe tener 2 o mas letras"
+    return cadena
+    
 
 # Función simple test() utilizada en main() para mostrar
 # lo que retorna cada función vs lo que debería retornar.
@@ -100,8 +98,8 @@ def main():
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Numero de donas: 4')
     test(donuts(9), 'Numero de donas: 9')
-    test(donuts(10), 'Numero de donas: muchas')
-    test(donuts(99), 'Numero de donas: muchas')
+    test(donuts(10), 'Numero de donas: many')
+    test(donuts(99), 'Numero de donas: many')
 
     print
     print 'both_ends'

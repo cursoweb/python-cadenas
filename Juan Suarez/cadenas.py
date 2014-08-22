@@ -26,10 +26,10 @@
 def donuts(contador):
     # +++tu código aquí+++
     if contador < 10:
-        resultado = "Numero de donas: " + str(contador)
-    elif contador >= 10:
-        resultado = "Numero de donas: muchas"
-    return resultado
+        valor = 'Numero de donas: %s' %(contador)
+    else:
+        valor = 'Numero de donas: many'
+    return valor
 
 
 # B. both_ends
@@ -39,12 +39,10 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     # +++tu código aquí+++
-    if len(s) < 2:
-        a = ""
-        return a
+    if len(s) > 2:
+        return s[0:2] + s[-2:]
     else:
-        b = str(s[0:2])+str(s[-2:])
-        return b
+        return ''
 
 
 # C. fix_start
@@ -57,11 +55,16 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    ss = s[0:1]
-    empiezaCon = s.startswith(ss)
-    if empiezaCon is True:
-        a= str(ss)+str(s[1:].replace(ss,'*'))
-    return a
+    old_string = s
+    n = 0
+    for len(old_string) < old_string[n]:
+        new_string = ''
+        if old_string[n] in new_string:
+            new_string[n] = '*'
+        else:
+            new_string[n] = old_string[n]
+        n += 1
+    return new_string
 
 
 # D. MixUp
@@ -74,13 +77,7 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
-    c = " "
-    aa = a[0:2]
-    bb = b[0:2]
-    uno = str(a.replace(aa,bb))
-    dos = str(b.replace(bb,aa))
-   
-    return uno +" "+dos
+    return
 
 
 # Función simple test() utilizada en main() para mostrar
@@ -100,8 +97,8 @@ def main():
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Numero de donas: 4')
     test(donuts(9), 'Numero de donas: 9')
-    test(donuts(10), 'Numero de donas: muchas')
-    test(donuts(99), 'Numero de donas: muchas')
+    test(donuts(10), 'Numero de donas: many')
+    test(donuts(99), 'Numero de donas: many')
 
     print
     print 'both_ends'
