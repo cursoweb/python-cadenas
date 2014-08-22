@@ -28,7 +28,7 @@ def donuts(contador):
     if contador >= 10:
         resultado = 'Numero de donas: muchas'
     elif contador < 10:
-        resultado = 'Numero de donas ' + str(contador)
+        resultado = 'Numero de donas: ' + str(contador)
     return resultado
 
 
