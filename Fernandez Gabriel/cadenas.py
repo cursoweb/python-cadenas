@@ -27,7 +27,7 @@ def donuts(contador):
     # +++tu código aquí+++
     if contador < 10:
         resultado = "Numero de donas: " + str(contador)
-    elif contador >= 10:
+    else:
         resultado = "Numero de donas: muchas"
     return resultado
 
@@ -40,11 +40,10 @@ def donuts(contador):
 def both_ends(s):
     # +++tu código aquí+++
     if len(s) < 2:
-        a = ""
-        return a
+        nuevaCadena = ""
     else:
-        b = str(s[0:2])+str(s[-2:])
-        return b
+        nuevaCadena = s[0:2] + s[-2:]
+    return nuevaCadena
 
 
 # C. fix_start
@@ -57,11 +56,11 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    ss = s[0:1]
-    empiezaCon = s.startswith(ss)
-    if empiezaCon is True:
-        a= str(ss)+str(s[1:].replace(ss,'*'))
-    return a
+    primerCaracter = s[0]
+    cadenaSinCaracter = s[1:]
+    remplazoCadena = cadenaSinCaracter.replace(primerCaracter,"*")
+    nuevaCadena = primerCaracter + remplazoCadena
+    return nuevaCadena
 
 
 # D. MixUp
@@ -74,13 +73,14 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
-    c = " "
-    aa = a[0:2]
-    bb = b[0:2]
-    uno = str(a.replace(aa,bb))
-    dos = str(b.replace(bb,aa))
-   
-    return uno +" "+dos
+    sliceA = a[0:2]
+    sliceB = b[0:2]
+
+    nuevoA = a.replace(a[0:2],sliceB)
+    nuevoB = b.replace(b[0:2],sliceA)
+
+    nuevaCadena = nuevoA + " " + nuevoB
+    return nuevaCadena
 
 
 # Función simple test() utilizada en main() para mostrar
@@ -100,8 +100,8 @@ def main():
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Numero de donas: 4')
     test(donuts(9), 'Numero de donas: 9')
-    test(donuts(10), 'Numero de donas: muchas')
-    test(donuts(99), 'Numero de donas: muchas')
+    test(donuts(10), 'Numero de donas: many')
+    test(donuts(99), 'Numero de donas: many')
 
     print
     print 'both_ends'
