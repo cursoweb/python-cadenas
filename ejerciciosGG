@@ -1,0 +1,117 @@
+#! /usr/bin/env python
+#-#- coding: utf-8 -#-
+
+import sys
+
+#ENUNCIADO:
+#Haga una calculadora que sume 2 valores y muestre su resultado. 
+#Puntos extras si pueden leer los sumandos desde la llamada a la aplicación. 
+
+def main ():
+
+    if(len(sys.argv) == 3):
+        if (sys.argv[1].isdigit() and sys.argv[2].isdigit()):
+            numeroA = int(sys.argv[1])
+            numeroB = int(sys.argv[2])
+            print "El resultado de la suma de parametros es: " , numeroA + numeroB
+        else: 
+            print "ERROR: Parametros incorrectos. Los parametros deben ser numeros enteros"
+    elif(len(sys.argv) == 1):
+        numeroA = raw_input ("Ingrese el primer valor a sumar: ")
+        numeroB = raw_input ("Ingrese el segundo valor a sumar: ")
+        numeroA = int(numeroA)
+        numeroB = int(numeroB)
+        print "El resultado de la suma de los valores es: " , numeroA + numeroB
+    else:
+        print "ERROR: Debe ingresar 2 parametros numericos"
+    
+    
+if __name__ == '__main__':
+    main()
+
+EJERCICIO 2
+
+#! /usr/bin/env python
+#-#- coding: utf-8 -#-
+
+#ENUNCIADO
+
+# Dados como datos: el precio del kilowatt-hora, la lectura actual y la lectura anterior de un medidor; 
+# calcular el importe que una persona deberá abonar a E.D.E.M.S.A. 
+# Mostrar los datos y el resultado obtenido.-
+
+def main ():
+    continuar = True
+    
+    while (continuar):
+        valorKWH = raw_input("Valor del kilowatt-hora?: ").strip()
+        
+        if (validarCadena(valorKWH)):
+            valorKWH = float(valorKWH)
+            continuar = False
+        else: 
+            print "ERROR: Ingrese un numero valido"
+            continuar = True
+    
+    continuar = True
+    
+    while (continuar):
+        lecturaAct = raw_input("Lectura actual del medidor (kW-H): ").strip()
+        lecturaAnt = raw_input("Lectura anterior del medidor (kW-H): ").strip()
+        
+        if (lecturaAct.isdigit() and lecturaAnt.isdigit()):
+            if (lecturaAct < lecturaAnt):
+                print "ERROR: Los datos ingresados son incorrectos, corrija los datos ingresados"
+                continuar = True
+            else:
+                lecturaAct = long (lecturaAct)
+                lecturaAnt = long (lecturaAnt)
+                continuar = False 
+        else:
+            print "ERROR: Debe ingresar datos numericos enteros"
+            continuar = True
+    
+    calculo = (lecturaAct - lecturaAnt) * valorKWH
+    print "El valor de la factura es: $" , calculo
+
+def validarCadena(cadena):
+    
+    #cadena = cadena.replace(".","") No funciona si hay mas de 2 puntos
+    
+    cadena = cadena[:cadena.find(".")] + cadena[cadena.find(".")+1:]
+    #Solo busca el primer punto y lo elimina
+    
+    if (cadena.isdigit()):
+        return True
+    else: 
+        return False   
+
+if __name__ == '__main__':
+    main()
+
+
+#! /usr/bin/env python
+#-#- coding: utf-8 -#-
+
+#Entrada
+horasDias = 24
+minutosHora = 60
+segundosMinuto = 60
+
+while (True):
+    cantDias = raw_input("Ingrese la cantidad de dias que quiere calcular: ")
+    
+    if cantDias.isdigit():
+        cantDias = int (cantDias)
+        break;
+    else: 
+        print "ERROR: Debe ingresar un numero"
+
+#Proceso
+
+cantSegundos = cantDias * horasDias * minutosHora * segundosMinuto   
+
+#Salida
+
+print "Los segundos en ", cantDias , " dias son: ", cantSegundos
+    
