@@ -25,12 +25,11 @@
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
     # +++tu código aquí+++
-    if contador < 10:
-        resultado = "Numero de donas: " + str(contador)
-    elif contador >= 10:
-        resultado = "Numero de donas: muchas"
-    return resultado
-
+	if contador <= 9:
+		respuesta= "Numero de donas: "  + str(contador)
+	else: 
+		respuesta= "Numero de donas: muchas"
+	return respuesta
 
 # B. both_ends
 # Dada una cadena s, devuelva una cadena hecha de los primeros 2
@@ -39,12 +38,13 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     # +++tu código aquí+++
-    if len(s) < 2:
-        a = ""
-        return a
-    else:
-        b = str(s[0:2])+str(s[-2:])
-        return b
+    r=len(s) 
+    if r<2:
+        respuesta= ""
+    else: 
+        respuesta= s[0:2]+s[-2]+s[-1]
+    
+    return respuesta
 
 
 # C. fix_start
@@ -57,13 +57,12 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    ss = s[0:1]
-    empiezaCon = s.startswith(ss)
-    if empiezaCon is True:
-        a= str(ss)+str(s[1:].replace(ss,'*'))
-    return a
-
-
+    r=s[0]
+    p=s.replace(r,"*")
+    z=s[0]+p[1:]
+    return z
+	
+   
 # D. MixUp
 # Dadas las cadenas a y b, retornar una cadena simple con a y b separados
 # pon un espacio '<a> <b>', excepto que hay que intercambiar los 
@@ -74,13 +73,15 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
-    c = " "
-    aa = a[0:2]
-    bb = b[0:2]
-    uno = str(a.replace(aa,bb))
-    dos = str(b.replace(bb,aa))
+    
+    r=a[2:]
+    t=b[0:2]
+    k=t+r
+    y=b[2:]
+    u=a[0:2]
+    l=u+y
+    return k + " " + l
    
-    return uno +" "+dos
 
 
 # Función simple test() utilizada en main() para mostrar
