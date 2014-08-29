@@ -24,8 +24,8 @@
 # Si la longitud de la cadena es menor a 3, dejarla sin cambiar.
 # Retornar la cadena resultante.
 def verbing(s):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # E. not_bad
@@ -37,8 +37,8 @@ def verbing(s):
 # Así, 'This dinner is not that bad!' devuelve:
 # This dinner is good!
 def not_bad(s):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # F. front_back
@@ -47,43 +47,43 @@ def not_bad(s):
 # Si la longitud es impar, haremos que el caracter extra vaya en la primer mitad.
 # ej. 'abcde', la primer mitad es 'abc', la final es 'de'.
 # Dadas 2 cadenas, a y b, retornar una cadena de la forma
-#  a-primera + b-primera + a-final + b-final
+#    a-primera + b-primera + a-final + b-final
 # Por ej: front_back('Gato', 'Rosca') devuelve 'GaRostoca'
 def front_back(a, b):
-  # +++tu código aquí+++
-  return
+    # +++tu código aquí+++
+    return
 
 
 # Función simple test() utilizada en main() para mostrar
 # lo que retorna cada función vs lo que debería retornar.
 def test(got, expected):
-  if got == expected:
-    prefix = ' OK '
-  else:
-    prefix = '  X '
-  print '%s obtuvo: %s esperaba: %s' % (prefix, repr(got), repr(expected))
+    if got == expected:
+        prefix = ' OK '
+    else:
+        prefix = '    X '
+    print '%s obtuvo: %s esperaba: %s' % (prefix, repr(got), repr(expected))
 
 
 # Función main() llama a las funciones de arribacon entradas interesantes,
 # utilizando test() para verificar si cada resultado es correcto o no.
 def main():
-  print 'verbing'
-  test(verbing('hail'), 'hailing')
-  test(verbing('swiming'), 'swimingly')
-  test(verbing('do'), 'do')
+    print 'verbing'
+    test(verbing('hail'), 'hailing')
+    test(verbing('swiming'), 'swimingly')
+    test(verbing('do'), 'do')
 
-  print
-  print 'not_bad'
-  test(not_bad('This movie is not so bad'), 'This movie is good')
-  test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
-  test(not_bad('This tea is not hot'), 'This tea is not hot')
-  test(not_bad("It's bad yet not"), "It's bad yet not")
+    print
+    print 'not_bad'
+    test(not_bad('This movie is not so bad'), 'This movie is good')
+    test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
+    test(not_bad('This tea is not hot'), 'This tea is not hot')
+    test(not_bad("It's bad yet not"), "It's bad yet not")
 
-  print
-  print 'front_back'
-  test(front_back('abcd', 'xy'), 'abxcdy')
-  test(front_back('abcde', 'xyz'), 'abcxydez')
-  test(front_back('Kitten', 'Donut'), 'KitDontenut')
+    print
+    print 'front_back'
+    test(front_back('abcd', 'xy'), 'abxcdy')
+    test(front_back('abcde', 'xyz'), 'abcxydez')
+    test(front_back('Kitten', 'Donut'), 'KitDontenut')
 
 if __name__ == '__main__':
-  main()
+    main()
