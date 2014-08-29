@@ -23,9 +23,16 @@
 # la palabra "muchas" en vez del contador verdadero.
 # Así donuts(5) devuelve 'Numero de donas: 5'
 # y donuts(23) devuelve 'Numero de donas: muchas'
+
+
 def donuts(contador):
-    # +++tu código aquí+++
-    return
+    if contador >= 10:
+        devolver= "Numero de donas: muchas"
+    else:
+        devolver= 'Numero de donas: '+ str (contador)
+    return devolver
+
+
 
 
 # B. both_ends
@@ -33,9 +40,15 @@ def donuts(contador):
 # y los últimos 2 caracteres de la cadena original,
 # así 'spring' devuelve 'spng'. Sin embargo, si la longitud de la cadena
 # es menos de 2, returnar una cadena vacía en su lugar.
+
 def both_ends(s):
-    # +++tu código aquí+++
-    return
+
+   if len(s) < 2:
+      devolver = ""
+   else:
+      devolver = s[0:2] + s[-2:]
+      
+   return  str(devolver)
 
 
 # C. fix_start
@@ -47,7 +60,9 @@ def both_ends(s):
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
-    # +++tu código aquí+++
+
+
+   
     return
 
 

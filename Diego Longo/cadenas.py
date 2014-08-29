@@ -24,8 +24,11 @@
 # Así donuts(5) devuelve 'Numero de donas: 5'
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
-    # +++tu código aquí+++
-    return
+    if contador<10:
+        resultado = "Numero de donas: " + str(contador)
+    else:
+        resultado = "Numero de donas: muchas"
+    return resultado
 
 
 # B. both_ends
@@ -34,7 +37,11 @@ def donuts(contador):
 # así 'spring' devuelve 'spng'. Sin embargo, si la longitud de la cadena
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
-    # +++tu código aquí+++
+    if len(s)<2:
+       cadena=""
+    return cadena:
+    else 
+        
     return
 
 

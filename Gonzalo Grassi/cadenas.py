@@ -1,6 +1,5 @@
 #!/usr/bin/python -tt
-# -*- coding: UTF-8 -*-
-
+# -#- coding: UTF-8 -#-
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -24,8 +23,11 @@
 # Así donuts(5) devuelve 'Numero de donas: 5'
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
-    # +++tu código aquí+++
-    return
+    if (contador < 10):
+        cadena = "Numero de donas: " + str(contador) 
+    else: 
+        cadena = "Numero de donas: " + "muchas"
+    return cadena
 
 
 # B. both_ends
@@ -34,8 +36,11 @@ def donuts(contador):
 # así 'spring' devuelve 'spng'. Sin embargo, si la longitud de la cadena
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
-    # +++tu código aquí+++
-    return
+    if ( len(s) < 2):
+        cadena = ""
+    else:
+        cadena = s[:2] + s[-2:] 
+    return cadena
 
 
 # C. fix_start
@@ -46,9 +51,9 @@ def both_ends(s):
 # Asuma que la cadena es de 1 o más caracteres.
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
-def fix_start(s):
-    # +++tu código aquí+++
-    return
+def fix_start(s): 
+    cadena = s[0] + s[1:].replace(s[0] , "*")
+    return cadena
 
 
 # D. MixUp
@@ -60,8 +65,9 @@ def fix_start(s):
 #     'dog', 'dinner' -> 'dig donner'
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
-    # +++tu código aquí+++
-    return
+    aux = a[:2] 
+    cadena = a.replace(a[:2],b[:2]) +" "+ b.replace(b[:2],aux)
+    return cadena
 
 
 # Función simple test() utilizada en main() para mostrar
@@ -110,3 +116,4 @@ def main():
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
     main()
+

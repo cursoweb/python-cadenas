@@ -25,7 +25,12 @@
 # y donuts(23) devuelve 'Numero de donas: muchas'
 def donuts(contador):
     # +++tu código aquí+++
-    return
+
+    if contador < 10:
+        rdo = 'Numero de donas: ' + str(contador)
+    elif contador >= 10:
+        rdo = 'Numero de donas: muchas'
+    return str(rdo)
 
 
 # B. both_ends
@@ -35,7 +40,14 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     # +++tu código aquí+++
-    return
+
+    if len(s) < 2:
+        rdo = ""
+
+    else:
+        rdo = s[0:2] + s[-2:]
+    
+    return str(rdo)
 
 
 # C. fix_start
@@ -48,7 +60,10 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    return
+    
+
+    
+    return 
 
 
 # D. MixUp

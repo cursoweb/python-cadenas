@@ -28,7 +28,7 @@ def donuts(contador):
     if contador >= 10:
         resultado = 'Numero de donas: muchas'
     elif contador < 10:
-        resultado = 'Numero de donas ' + str(contador)
+        resultado = 'Numero de donas: ' + str(contador)
     return resultado
 
 
@@ -39,7 +39,11 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     # +++tu código aquí+++
-    return
+    if len(s)<2:
+        r=''
+    else:
+        r=s[0:2]+s[-2:]
+    return r
 
 
 # C. fix_start

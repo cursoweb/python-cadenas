@@ -27,7 +27,7 @@ def donuts(contador):
     if contador < 10: 
         cadena = ("Numero de donas: " + str(contador)) 
     else: 
-        cadena = "Numero de donas: many" 
+        cadena = "Numero de donas: muchas" 
     return cadena 
     
 
@@ -98,8 +98,8 @@ def main():
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Numero de donas: 4')
     test(donuts(9), 'Numero de donas: 9')
-    test(donuts(10), 'Numero de donas: many')
-    test(donuts(99), 'Numero de donas: many')
+    test(donuts(10), 'Numero de donas: muchas')
+    test(donuts(99), 'Numero de donas: muchas')
 
     print
     print 'both_ends'
