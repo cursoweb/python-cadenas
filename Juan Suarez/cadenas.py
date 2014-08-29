@@ -55,15 +55,15 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    old_string = s
-    n = 0
-    for len(old_string) < old_string[n]:
-        new_string = ''
-        if old_string[n] in new_string:
-            new_string[n] = '*'
+    #old_string = s
+    letters = []
+    new_string = []
+    for char in s:
+        if s[char] in letters:
+            new_string[char] = '*'
         else:
-            new_string[n] = old_string[n]
-        n += 1
+            new_string[char] = s[char]
+            letters.append(char)
     return new_string
 
 
