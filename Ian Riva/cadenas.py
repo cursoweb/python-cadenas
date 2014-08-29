@@ -39,10 +39,10 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     # +++tu código aquí+++
-    if s<2:
+    if len(s)<2:
         r=''
     else:
-        r=[0:2]+s[-2]
+        r=s[0:2]+s[-2:]
     return r
 
 
