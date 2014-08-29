@@ -29,7 +29,7 @@ def donuts(contador):
     if contador < 10:
         rdo = 'Numero de donas: ' + str(contador)
     elif contador >= 10:
-        rdo = 'Numero de donas: many'
+        rdo = 'Numero de donas: muchas'
     return str(rdo)
 
 
@@ -96,8 +96,8 @@ def main():
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Numero de donas: 4')
     test(donuts(9), 'Numero de donas: 9')
-    test(donuts(10), 'Numero de donas: many')
-    test(donuts(99), 'Numero de donas: many')
+    test(donuts(10), 'Numero de donas: muchas')
+    test(donuts(99), 'Numero de donas: muchas')
 
     print
     print 'both_ends'
