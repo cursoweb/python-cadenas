@@ -71,13 +71,11 @@ def front_back(a, b):
     
     return s
 
-
 def evaluaCadenaPar(s):
     if (len(s)%2 == 0):
         return True
     else:
         return False
-        
 
 # Función simple test() utilizada en main() para mostrar
 # lo que retorna cada función vs lo que debería retornar.
@@ -112,3 +110,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+<
