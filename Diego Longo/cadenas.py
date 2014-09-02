@@ -38,11 +38,10 @@ def donuts(contador):
 # es menos de 2, returnar una cadena vacía en su lugar.
 def both_ends(s):
     if len(s)<2:
-       cadena=""
-    return cadena:
-    else 
-        
-    return
+       s = ''
+    else:
+       s = s[:2] + s[-2:]
+    return s
 
 
 # C. fix_start
@@ -54,8 +53,8 @@ def both_ends(s):
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
-    # +++tu código aquí+++
-    return
+    cadena = s[0] + s[1:].replace(s[0],"*")
+    return cadena
 
 
 # D. MixUp
@@ -67,8 +66,10 @@ def fix_start(s):
 #     'dog', 'dinner' -> 'dig donner'
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
-    # +++tu código aquí+++
-    return
+    nueva_a = a[:2].replace(a[:2],b[:2]) + a[2:]
+    nueva_b = b[:2].replace(b[:2],a[:2]) + b[2:]
+    cadena_simple = nueva_a + " " + nueva_b
+    return cadena_simple
 
 
 # Función simple test() utilizada en main() para mostrar
