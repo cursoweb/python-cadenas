@@ -55,15 +55,14 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    old_string = s
-    n = 0
-    for len(old_string) < old_string[n]:
-        new_string = ''
-        if old_string[n] in new_string:
-            new_string[n] = '*'
+    letters = []
+    new_string = ''
+    for char in s:
+        if char in letters:
+            new_string += '*'
         else:
-            new_string[n] = old_string[n]
-        n += 1
+            new_string += char
+            letters.append(char)
     return new_string
 
 
@@ -77,7 +76,12 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
-    return
+    new_a = a.replace(a[0,1], b[0,1])
+    #new_a = a
+    #new_a[0,1] = b[0,1]
+    new_b = b
+    new_b[0,1] = a[0,1]
+    return ' '.join(new_a, new_b)
 
 
 # Función simple test() utilizada en main() para mostrar

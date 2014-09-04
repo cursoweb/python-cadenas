@@ -56,7 +56,11 @@ def both_ends(s):
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
     # +++tu código aquí+++
-    return
+    ss = s[0]
+    empiezaCon = s.startswith(ss)
+    if empiezaCon is True:
+        a= str(ss)+str(s[1:].replace(ss,'*'))
+    return a
 
 
 # D. MixUp
@@ -69,7 +73,12 @@ def fix_start(s):
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
     # +++tu código aquí+++
-    return
+    aa=a[0:2]
+    bb=b[0:2]
+    esp=' '
+    pri=str(a.replace(aa,bb))
+    seg=str(b.replace(bb,aa))
+    return pri+esp+seg
 
 
 # Función simple test() utilizada en main() para mostrar
