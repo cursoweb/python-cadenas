@@ -59,24 +59,16 @@ def not_bad(s):
 #    a-primera + b-primera + a-final + b-final
 # Por ej: front_back('Gato', 'Rosca') devuelve 'GaRostoca'
 def front_back(a, b):
-    s = ""
-    if (len(a)%2 == 0):
-        a = par
-    else:
-        a = impar
-    if (len(b)%2 == 0):
-        b = par
-    else:
-        b = impar
-    if (a == par and b == par):
-        s = a[:len(a)/2] + b[len(b)/2:] + a[len(a)/2:] + b[len(b)/2:]
-    elif (a == par and b == impar):
-        s = a[:len(a)/2] + b[(len(b)/2)+1:] + a[len(a)/2:] + b[(len(b)/2)+1:]
-    elif (a == impar and b == par):
-        s = a[:(len(a)/2)+1] + b[len(b)/2:] + a[(len(a)/2)+1:] + b[len(b)/2:]
-    elif (a == impar and b == impar):
-        s = a[:(len(a)/2)+1] + b[(len(b)/2)+1:] + a[(len(a)/2)+1:] + b[(len(b)/2)+1:]
-    print s
+    resultado = ""
+    if len(a)%2 == 0 and len(b)%2 == 0:
+        resultado = a[:len(a)/2] + b[:len(b)/2] + a[len(a)/2:] + b[len(b)/2:]
+    if len(a)%2 == 0 and (len(b)%2 != 0):
+        resultado = a[:len(a)/2] + b[:1+len(b)/2] + a[len(a)/2:] + b[1+len(b)/2:]
+    if len(a)%2 != 0 and len(b)%2 == 0:
+        resultado = a[:1+len(a)/2] + b[:len(b)/2] + a[1+len(a)/2:] + b[len(b)/2:]
+    if len(a)%2 != 0 and len(b)%2 != 0:
+        resultado = a[:1+len(a)/2] + b[:1+len(b)/2] + a[1+len(a)/2:] + b[1+len(b)/2:]
+    return resultado 
     
 
 # Función simple test() utilizada en main() para mostrar
