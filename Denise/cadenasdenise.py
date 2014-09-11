@@ -59,11 +59,11 @@ def both_ends(s):
 # Ayuda: s.replace(stra, strb) retorna una versión de la cadena s
 # donde todas las instancias de stra han sido reemplazadas por strb.
 def fix_start(s):
-    # +++tu código aquí+++
+    rdo = s[0] + s[1:].replace( s[0],'*')
     
 
     
-    return 
+    return str(rdo)
 
 
 # D. MixUp
@@ -75,8 +75,12 @@ def fix_start(s):
 #     'dog', 'dinner' -> 'dig donner'
 # Asumir a y b tienen una longitud de 2 o más.
 def mix_up(a, b):
-    # +++tu código aquí+++
-    return
+
+    a2= b[0:2] + a[2:]
+    b2= a[0:2] + b[2:]
+    
+    
+    return a2 + ' ' + b2
 
 
 # Función simple test() utilizada en main() para mostrar
